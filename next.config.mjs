@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const { withCloudflare } = require("@cloudflare/next-on-pages");
-module.exports = withCloudflare({
+
+import { withCloudflare } from "@cloudflare/next-on-pages";
+const nextConfig = withCloudflare({
   reactStrictMode: true,
 });
+
+export default nextConfig;
