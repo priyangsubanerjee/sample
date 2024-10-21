@@ -15,3 +15,12 @@ export async function createTodo(title, isCompleted = false) {
     throw new Error(error.message);
   }
 }
+
+export async function getAllTodos() {
+  try {
+    let todos = await prisma.todo.findMany();
+    return todos;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
