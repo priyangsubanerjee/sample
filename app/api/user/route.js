@@ -1,11 +1,7 @@
-import { createUser } from "@/prisma/user";
+import { createTodo } from "@/prisma/todo";
 
 export async function GET() {
-  let operation = await createUser(
-    "user123@gmail.commm",
-    "password123",
-    "name123"
-  );
-  console.log(operation);
+  let randomString = Math.random() * 1000 + "Leader";
+  let operation = await createTodo(randomString);
   return Response.json({ message: "GET /api/user" });
 }
